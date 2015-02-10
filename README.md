@@ -38,14 +38,8 @@ It depends on your system, but here's how to install for Linux Mint:
     $ sudo git clone https://github.com/lorian1333/RoundV2.git \
       /usr/share/mdm/html-themes/RoundV2
     ```
-    
-2. Fix permissions:
 
-    ```bash
-    $ sudo chmod -R 776 RoundV2/
-    ```
-    
-3. Open up the preferences panel and select the theme from the HTML list:
+2. Open up the preferences panel and select the theme from the HTML list:
 
     ```bash
     $ sudo mdmsetup
