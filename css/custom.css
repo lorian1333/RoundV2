@@ -1,0 +1,131 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: url('../img/bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-nav > li > a{
+    color: #ffffff;
+    background: transparent none;
+}
+
+.navbar-brand{
+    color: #ffffff;
+}
+
+.navbar-brand:hover{
+    color:#ffffff;
+    cursor: default;
+}
+
+#user-list{
+    margin-bottom: 202px;
+    display: none;
+}
+
+.user{
+    padding: 10px 10px 10px 10px;
+}
+.user-label {
+	margin-top: 20px;
+}
+.user-container {
+    cursor: pointer;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+
+}
+.user-image{
+    width: 120px;
+    height: 120px;
+	-webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+
+}
+
+.user-image:hover {
+
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+p{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color:white;
+    font-weight: bold;
+}
+
+#mdm-message{
+    display: none;
+}
+
+#error-container{
+    display: none;
+}
+
+.ul-top{
+    margin-top: 10px;
+}
+
+.transparent{
+    color:#ffffff !important;
+    background: transparent none;
+}
+
+.password{
+    position: absolute;
+    margin-top: 37px;
+    display: none;
+    z-index: 5;
+    border: 3px solid cyan;
+    background-color: #ceecfa;
+	outline: none;
+}
+/** Center and fixed positioning **/
+
+.vertical-center {
+    height:100%;
+    width:100%;
+    text-align: center;  /* align the inline(-block) elements horizontally */
+    font: 0/0 a;         /* remove the gap between inline(-block) elements */
+}
+
+.vertical-center:before {    /* create a full-height inline block pseudo=element */
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    height: 100%;
+}
+
+.vertical-center > .container {
+    max-width: 100%;
+
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;        /* <-- reset the font property */
+}
+
+#fixed-sessions{
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+}
+
+#fixed-languages{
+    position: fixed;
+    left: 15px;
+    bottom: 15px;
+}
