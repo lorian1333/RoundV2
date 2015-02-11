@@ -183,7 +183,7 @@ function mdm_add_session(session_name, session_file) {
     var li = document.createElement('li');
 
     var link = document.createElement('a');
-    link.setAttribute('href', "javascript:alert('SESSION###"+session_name+"###"+session_file+"');select_session('"+session_name+"','"+session_file+"');");
+    link.setAttribute('href', "javascript:sessionClick('"+session_name+"','"+session_file+"');");
 
     var name_div = document.createTextNode(session_name);
 
@@ -216,9 +216,8 @@ function mdm_add_language(language_name, language_code){
     var li = document.createElement('li');
 
     var link = document.createElement('a');
-    link.setAttribute('href', "javascript:alert('LANGUAGE###"+language_code+"');set_current_language('"+language_name+"','"+language_code+"');");
-
-   var name_div = document.createTextNode(language_name);
+	link.setAttribute('href', "javascript:languageClick('"+language_name+"','"+language_code+"');");
+	var name_div = document.createTextNode(language_name);
 
     li.appendChild(link);
     link.appendChild(name_div);
@@ -237,6 +236,3 @@ function mdm_add_language(language_name, language_code){
 function set_current_language(language_name, language_code){
     $('#language-button').html(language_name+' <span class="caret"></span>');
 }
-//mdm_add_user('test','test');
-//mdm_add_user('test2','test2');
-//mdm_add_user('test3','test3');

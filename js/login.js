@@ -6,6 +6,9 @@ var cUsers = 0;
 var open = false;
 var finalUser;
 
+var selectedSession = false;
+var selectedLanguage = false;
+
 /**
  * Sets the date in left top corner with custom format
  */
@@ -22,6 +25,25 @@ function getDate(){
     document.getElementById('date-header').innerHTML = faCal + d +' '+date+' '+ month;
 }
 
+function openUser(username) {
+	$("#"+username+"-container").css('margin-right', '350px');
+	$('#'+username+'-password').css({
+		opacity: 0,
+		display: 'inline-block'
+	}).animate({opacity:1},600);
+	$('#'+username+'-password').focus();
+}
+
+function sessionClick(session_name, session_file)
+{
+	select_session(session_name, session_file);
+	selectedSession = session_name+"###"+session_file;
+}
+function languageClick(language_name, language_code)
+{
+	set_current_language(language_name, language_code);
+	selectedLanguage = language_code;
+}
 /**
  * Action called when clicked on image.
  *
@@ -37,15 +59,8 @@ function userClick(self){
 
     if(open == false){
         open = username;
-
-        //Open clicked one
-        $("#"+username+"-container").css('margin-right', '350px');
-        $('#'+username+'-password').css({
-            opacity: 0,
-            display: 'inline-block'
-        }).animate({opacity:1},600);
-		$('#'+username+'-password').focus();
-    } else {
+		openUser(username);
+           } else {
 		if(open == username)
 		{
 			$('#'+open+'-password').fadeOut(400, function() {
@@ -59,14 +74,7 @@ function userClick(self){
 			$('#'+open+'-password').fadeOut(400, function() {
 				$('#'+open+'-password').val('');
 				$('#'+open+'-container').css('margin-right', '0px');
-
-				//Open clicked one
-				$("#"+username+"-container").css('margin-right', '350px');
-				$('#'+username+'-password').css({
-					opacity: 0,
-					display: 'inline-block'
-				}).animate({opacity:1},600);
-				$('#'+username+'-password').focus();
+				openUser(username);
 				open = username;
 			});
 		}
@@ -121,6 +129,10 @@ function send_login() {
     } else if (password == "") {
         mdm_error("Please input a valid password.");
     } else {
+		if(selectedSession!=false)
+			alert("SESSION###"+selectedSession);
+		if(selectedLanguage!=false)
+			alert("LANGUAGE###"+selectedLanguage);
         alert("LOGIN###" + password);
     }
 
